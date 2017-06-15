@@ -14,7 +14,7 @@ f = function(data, y, cn = 2) {
 
 #Chiama f su tutte le variabili quantitative
 g = function(data, cn = 2){
-	for (k in names(data[ , sapply(dataset, is.numeric), drop=FALSE])) {
+	for (k in names(data[ , sapply(data, is.numeric), drop=FALSE])) {
 		f(data, k, cn)
 		readline(prompt="Press [enter] to continue")
 	}

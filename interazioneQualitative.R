@@ -1,4 +1,5 @@
-# Crea i boxplot di interazione per tutte le variabili qualitative (da usare nel caso di y qualitativa)
+# Crea i boxplot di interazione per tutte le variabili qualitative (da usare nel caso di y qualitativa e x quantitativa)
+# esempio: boxplotQualitative(film, 2, 'budget', 'box01')
 boxplotQualitative = function(data, cn, x, y) {
     a = names(data[ , sapply(data, is.factor), drop=FALSE]);
     l = ceiling(length(a)/cn);

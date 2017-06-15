@@ -1,4 +1,4 @@
-mse = function(modello) {
-    modello.pred = predict(modello, dati.test)
-    return(mean((dati.test$mag - modello.pred)^2))
+mse = function(modello, test.set, y) {
+    modello.pred = predict(modello, test.set)
+    return(mean((y - modello.pred)^2))
 }

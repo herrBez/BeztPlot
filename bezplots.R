@@ -1,5 +1,9 @@
-#Crea un boxplot per ogni qualitativa data una variabile quantitativa y in input
-#Esempio f(data, 'budget'): importante usare gli apici!!!
+# Given a dataset 'data' (with both qualitative and quantitative cols) and the
+# the name of a quantitative column 'y' it creates a boxplot for each qualitative
+# variable in the dataset. Additionally you can also set the number of columns
+# to divide the window (default=2)
+#
+# Example: f(data, 'budget')
 f = function(data, y, cn = 2) {
 	a = names(data[ , sapply(data, is.factor), drop=FALSE])
 	l = ceiling(length(a)/cn)
@@ -12,7 +16,7 @@ f = function(data, y, cn = 2) {
 	}
 }
 
-#Chiama f su tutte le variabili quantitative
+#This function calls f on each quantitative column.
 g = function(data, cn = 2){
 	for (k in names(data[ , sapply(data, is.numeric), drop=FALSE])) {
 		f(data, k, cn)
